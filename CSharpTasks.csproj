@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSharpTasks.Task1_4</StartupObject>
+    <StartupObject>CSharpTasks.Task_3</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AccessDemo">
@@ -54,6 +54,8 @@
     <Compile Include="Task1_2.cs" />
     <Compile Include="Task1_3.cs" />
     <Compile Include="Task1_4.cs" />
+    <Compile Include="Task_2.cs" />
+    <Compile Include="Task_3.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
