@@ -30,6 +30,7 @@ namespace CSharpTasks
                 }
                 obj1.reverseArray(arr);
                 char a, b;
+                Console.WriteLine("Swapping...........");
                 Console.WriteLine("Enter the value for a :");
                 a = Convert.ToChar(Console.ReadLine());
                 Console.WriteLine("Enter the value for b:");
@@ -48,6 +49,7 @@ namespace CSharpTasks
                 }
                 obj2.reverseArray(arr);
                 int a, b;
+                Console.WriteLine("Swapping...........");
                 Console.WriteLine("Enter the value for a :");
                 a = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter the value for b:");
