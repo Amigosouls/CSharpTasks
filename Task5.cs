@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,28 +54,28 @@ namespace CSharpTasks
             {
                 return amount * interest * years / 100;
             };
-            //int pamount, years;
-            //decimal interest;
-            //Console.WriteLine("Enter the Principle Amount:");
-            //pamount = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("Enter the Interest:");
-            //interest = Convert.ToDecimal(Console.ReadLine());
-            //Console.WriteLine("Enter the No of years:");
-            //years = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine($"The simple interest Is:{simpleInterest(pamount, interest, years)}");
+            int pamount, years;
+            decimal interest;
+            Console.WriteLine("Enter the Principle Amount:");
+            pamount = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Interest:");
+            interest = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Enter the No of years:");
+            years = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"The simple interest Is:{simpleInterest(pamount, interest, years)}");
             Console.WriteLine("Virtual vs New");
-            Console.WriteLine("calling methods with base reference Employee");
+            Console.WriteLine("calling methods with base reference HR");
             HR hr = new HR();
             hr.empname = "Srikanth";
             hr.empid = 1;
             hr.salary = 7327233;
             hr.showSalary();
-            Console.WriteLine("For HR reference");
+            Console.WriteLine("For Emp Reference");
             Employee emp = hr;
             emp.showSalary();
             Console.WriteLine("Interfaces");
-            ICircle circle = new CalculateArea() { radius=23465};
-            IRectangle rectangle  = new CalculateArea() { length=635, width=737};
+            ICircle circle = new CalculateArea() { radius = 23465 };
+            IRectangle rectangle = new CalculateArea() { length = 635, width = 737 };
             circle.Area();
             rectangle.Area();
         }
@@ -85,6 +86,7 @@ namespace CSharpTasks
         public string empname;
         public int empid;
         public decimal salary;
+        // public virtual string showSalary() =>$"empName:{empname} empId:{empid} empSalary:{salary}";
         //public virtual void showSalary()
         //{
         //    Console.WriteLine($"The employee with id:{this.empid}, name:{this.empname} and salary:{salary}");
@@ -99,9 +101,16 @@ namespace CSharpTasks
     internal class HR : Employee
     {
         public decimal bonus;
+        // public override string showSalary() => $"empName:{empname} empId:{empid} empSalary:{salary} empBonus:{(decimal)10/100*salary}";
+        //public override void showSalary()
+
+        //{
+        //    Console.WriteLine($"The employee with id:{this.empid}, name:{this.empname} , salary:{salary} and bonus {(decimal)10 / 100 * salary}");
+        //}
         public new void showSalary()
         {
-            Console.WriteLine($"The employee with id:{this.empid}, name:{this.empname} , salary:{salary} and bonus {(decimal)10/100 * salary}");
+            bonus = (decimal)10 / 100 * salary;
+            Console.WriteLine($"The employee with id:{this.empid}, name:{this.empname} , salary:{salary} and bonus {bonus}");
         }
     }
 
@@ -122,9 +131,9 @@ namespace CSharpTasks
         public decimal radius { get; set; }
         public decimal width { get; set; }
         public decimal length { get; set; }
-        void  ICircle.Area()
+        void ICircle.Area()
         {
-            Console.WriteLine($"The area of the circle is {3.14m* radius* radius}");
+            Console.WriteLine($"The area of the circle is {3.14m * radius * radius}");
         }
         void IRectangle.Area()
         {
