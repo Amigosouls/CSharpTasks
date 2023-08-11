@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ReflectionTest.Program</StartupObject>
+    <StartupObject>CSharpTasks.RecordsMain</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AccessDemo">
@@ -77,12 +77,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attendance.cs" />
+    <Compile Include="Attributes.cs" />
     <Compile Include="CSV_FIles.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Files.cs" />
+    <Compile Include="Interestingtopics.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Partial2.cs" />
     <Compile Include="Partial3.cs" />
+    <Compile Include="Records.cs" />
     <Compile Include="Reflection.cs" />
     <Compile Include="Task1_1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
